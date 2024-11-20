@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 import scipy.optimize as op
-st.set_page_config(page_title="Lab 9 graph",  page_icon="🧊") #, layout="wide"
+st.set_page_config(page_title="Least squares method",  page_icon="🧊") #, layout="wide"
 def linear(x, a, b):
     return a * x + b
 
@@ -44,8 +44,8 @@ if (st.button("Аппроксимировать прямой y=a+bx") and len(X[
         st.write("Результаты обработки с помощью МНК:")
         st.write("b= "+ str(np.round(popt[0],3))) 
         st.write("a= "+ str(np.round(popt[1],3)))    
-        st.write("$\DELTA_{b}$= "+ str(np.round(perr[0],3)))
-        st.write("$\DELTA_{a}$= "+ str(np.round(perr[1],3)))
+        st.write("$\Delta_{b}$= "+ str(np.round(perr[0],3)))
+        st.write("$\Delta_{a}$= "+ str(np.round(perr[1],3)))
         X2=np.linspace(0,max(X),5)
         ax.plot(X2,X2*popt[0]+popt[1], linestyle = '--', color="black")
         placeholder.pyplot(fig)
