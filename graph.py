@@ -13,8 +13,8 @@ def fit_with_curve_fit(x, y):
     return popt, np.sqrt(err.diagonal())
 
 
-x=[None]*5
-y=[None]*5
+x=[None]*10
+y=[None]*10
 st.write("Введите 5 значений x")
 row1 = st.columns(10)
 for i, col in enumerate(row1):
