@@ -15,13 +15,13 @@ def fit_with_curve_fit(x, y):
 
 x=[None]*10
 y=[None]*10
-st.write("Введите 10 значений x")
+st.write("Введите значения x (все поля заполнять необязательно)")
 row1 = st.columns(10)
 for i, col in enumerate(row1):
 #on_change=capture_x_0,
     inp_key="x_"+str(i)
     x[i]=col.number_input("", key=inp_key)
-st.write("Введите 10 значений y")
+st.write("Введите значения y")
 row2 = st.columns(10)
 for i, col in enumerate(row2):
     inp_key="y_"+str(i)
@@ -46,7 +46,7 @@ if (st.button("Аппроксимировать прямой y=a+bx") and len(X[
         st.write("a= "+ str(np.round(popt[1],3)))    
         st.write("$\Delta_{b}$= "+ str(np.round(perr[0],3)))
         st.write("$\Delta_{a}$= "+ str(np.round(perr[1],3)))
-        X2=np.linspace(0,max(X),5)
+        X2=np.linspace(min(X),max(X),5)
         ax.plot(X2,X2*popt[0]+popt[1], linestyle = '--', color="black")
         placeholder.pyplot(fig)
         st.write("Не забудьте округлить значения величин и их погрешности в соответствии с правилами округления, добавить единицы измерения а также названия осей на графике")
