@@ -46,7 +46,7 @@ if (st.button("Аппроксимировать прямой y=a+bx") and len(X[
         st.write("a= "+ str(np.round(popt[1],3)))    
         st.write("$\Delta_{b}$= "+ str(np.round(perr[0],3)))
         st.write("$\Delta_{a}$= "+ str(np.round(perr[1],3)))
-        X2=np.linspace(min(X),max(X),5)
+        X2=np.linspace(min(X[(X!=0) & (Y!=0)]),max(X),5)
         ax.plot(X2,X2*popt[0]+popt[1], linestyle = '--', color="black")
         placeholder.pyplot(fig)
         st.write("Не забудьте округлить значения величин и их погрешности в соответствии с правилами округления, добавить единицы измерения а также названия осей на графике")
